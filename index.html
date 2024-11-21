@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Thakur's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        html 
+        { scroll-behavior: smooth; }
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style-type: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            background: url('header-bg.jpg') no-repeat center center/cover;
+            color: rgb(32, 145, 41);
+            padding: 100px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .header h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+        .header hr {
+            width: 100px;
+            border: 2px solid #4CAF50;
+            margin: 20px auto;
+        }
+        .mid {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .mid h3 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        /* About Me Section */
+        .about {
+            background-color: #fff;
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .about h2 {
+            text-align: center;
+            color: #333;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Hobby Cards */
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px;
+            background-color: #f7f9fb;
+        }
+        .hobby-card {
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .hobby-card i {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 15px;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .hobby-card h3 {
+            font-size: 1.8rem;
+            color: white;
+        }
+        .hobby-card p {
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        /* Image Gallery */
+        .favorites {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        .favorites h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        figure {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        figure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 300px; /* Fixed width */ height: 400px; /* Fixed height */ object-fit: cover;
+        }
+        figcaption {
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        /* Contact Form */
+        .contact {
+            background-color: #fff;
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .contact h2 {
+            text-align: center;
+            color: #333;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+       
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .mid h3 {
+                font-size: 1.5rem;
+            }
+            .about p {
+                font-size: 1rem;
+            }
+            .hobbies {
+                grid-template-columns: 1fr;
+            }
+            figure {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="header">
+        <h1>Welcome to My Webpage</h1>
+        <hr>
+   
+    </div>
+
+    <div class="mid">
+        <h3>Hi, I'm Aman Thakur, a passionate web developer, gamer, and tech enthusiast!</h3>
+    </div>
+
+    <div id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm Aman Thakur, a passionate web developer, gamer, and tech enthusiast. I love learning new technologies and building projects. Currently, I’m focusing on improving my web development skills, especially in HTML, CSS, and JavaScript. In my free time, I enjoy gaming, reading, and traveling. I'm always excited to learn more and take on new challenges in tech!</p>
+    </div>
+
+    <div id="hobbies" class="hobbies">
+        <div class="hobby-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Gaming</h3>
+            <p>Gaming is one of my favorite hobbies.</p>
+        </div>
+        <div class="hobby-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Coding</h3>
+            <p>I love building new projects with code.</p>
+        </div>
+        <div class="hobby-card">
+            <i class="fas fa-book"></i>
+            <h3>Reading</h3>
+            <p>I love gaining knowledge about others.</p>
+        </div>
+        <div class="hobby-card">
+            <i class="fas fa-plane"></i>
+            <h3>Travelling</h3>
+            <p>I love to visit different places.</p>
+        </div>
+    </div>
+
+    <div class="favorites">
+        <h2>Some of My Favorite Things</h2>
+        <figure>
+            <img src="gaming.jpeg" alt="Gaming">
+            <figcaption>Gaming</figcaption>
+        </figure>
+        <figure>
+            <img src="codeee.jpeg" alt="Coding">
+            <figcaption>Coding</figcaption>
+        </figure>
+        <figure>
+            <img src="prof.jpeg" alt="Reading">
+            <figcaption>Reading</figcaption>
+        </figure>
+        <figure>
+            <img src="trav.jpeg" alt="Travelling">
+            <figcaption>Travelling</figcaption>
+        </figure>
+    </div>
+
+    <div id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mpwzlore" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+
+    <footer>
+        <p>Connect with me: <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i> Twitter</a> <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> </p>
+        <p>Thank you for visiting my webpage! &copy; 2024 <a href="#">Aman Thakur</a></p>
+    </footer>
+</body>
+</html>
